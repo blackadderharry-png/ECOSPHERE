@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eco Sphere Terrariums</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #f5f7f0 0%, #e8f0e8 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 400px;
+      width: 100%;
+      background: white;
+      border-radius: 40px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .logo-section {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo-section img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(74, 124, 89, 0.3);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2d5a3d;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .brand-subtitle {
+      font-size: 11px;
+      color: #6b8e76;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      text-align: center;
+      margin: 25px 0 35px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tagline h2 {
+      font-size: 22px;
+      color: #2d5a3d;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .tagline p {
+      font-size: 14px;
+      color: #6b8e76;
+      line-height: 1.6;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      background: white;
+      border: 2px solid #5a9e6f;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #2d5a3d;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.6s forwards;
+    }
+
+    .link-button:nth-child(1) { animation-delay: 0.2s; }
+    .link-button:nth-child(2) { animation-delay: 0.4s; }
+    .link-button:nth-child(3) { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .link-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #5a9e6f 0%, #3d7a50 100%);
+      transition: left 0.3s ease;
+      z-index: -1;
+    }
+
+    .link-button:hover::before {
+      left: 0;
+    }
+
+    .link-button:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(74, 124, 89, 0.3);
+    }
+
+    .email-icon {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .email-icon a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #5a9e6f;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .email-icon a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(74, 124, 89, 0.4);
+    }
+
+    .email-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 480px) {
+      .container {
+        padding: 25px 20px;
+        border-radius: 20px;
+      }
+
+      .logo-section img {
+        width: 90px;
+      }
+
+      .tagline h2 {
+        font-size: 18px;
+      }
+
+      .tagline p {
+        font-size: 12px;
+      }
+
+      .link-button {
+        font-size: 14px;
+        padding: 12px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Section -->
+    <div class="logo-section">
+      <img src="your-logo.png" alt="Eco Sphere Terrariums Logo" />
+      <div class="brand-name">ECO SPHERE</div>
+      <div class="brand-subtitle">TERRARIUMS</div>
+    </div>
+
+    <!-- Tagline -->
+    <div class="tagline">
+      <h2>Naturally Crafted<br>Sustainably Sourced</h2>
+      <p>Make the easy and affordable<br>green choice for your home.</p>
+    </div>
+
+    <!-- Links -->
+    <div class="links">
+      <a href="https://www.tiktok.com/@myecosphere0?_r=1&_t=ZN-91y9buakN0g" class="link-button" target="_blank">TikTok</a>
+      <a href="https://www.instagram.com/my.eco.sphere?igsh=MXExZHA4eTQ5Nnc0NQ==" class="link-button" target="_blank">Instagram</a>
+      <a href="https://www.facebook.com" class="link-button" target="_blank">Facebook</a>
+    </div>
+
+    <!-- Email Icon -->
+    <div class="email-icon">
+      <a href="mailto:my.eco.sphere.0@gmail.com">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
