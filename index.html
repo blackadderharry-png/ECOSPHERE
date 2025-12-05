@@ -5,11 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Eco Sphere Terrariums</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Georgia', serif;
@@ -37,6 +33,25 @@
       from { opacity: 0; transform: scale(0.95); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    /* Leaf Decorations */
+    .leaf-decoration {
+      position: absolute;
+      opacity: 0.15;
+      pointer-events: none;
+      animation: sway 6s ease-in-out infinite;
+    }
+
+    @keyframes sway {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+    }
+
+    .leaf-top-left { top: 20px; left: 20px; width: 80px; height: 80px; }
+    .leaf-top-right { top: 30px; right: 20px; width: 60px; height: 60px; }
+    .leaf-bottom { bottom: 30px; left: 50%; transform: translateX(-50%); width: 200px; height: 150px; }
+    .leaf-bottom-left { bottom: 20px; left: 10px; width: 80px; height: 80px; }
+    .leaf-bottom-right { bottom: 20px; right: 10px; width: 80px; height: 80px; }
 
     .logo-section {
       text-align: center;
@@ -127,10 +142,7 @@
     .link-button:nth-child(3) { animation-delay: 0.6s; }
 
     @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .link-button::before {
@@ -145,10 +157,7 @@
       z-index: -1;
     }
 
-    .link-button:hover::before {
-      left: 0;
-    }
-
+    .link-button:hover::before { left: 0; }
     .link-button:hover {
       color: white;
       transform: translateY(-2px);
@@ -177,72 +186,39 @@
       box-shadow: 0 8px 20px rgba(74, 124, 89, 0.4);
     }
 
-    .email-icon svg {
-      width: 24px;
-      height: 24px;
-      fill: white;
-    }
+    .email-icon svg { width: 24px; height: 24px; fill: white; }
 
     /* Mobile optimization */
     @media (max-width: 480px) {
-      .container {
-        padding: 25px 20px;
-        border-radius: 20px;
-      }
-
-      .logo-section img {
-        width: 90px;
-      }
-
-      .tagline h2 {
-        font-size: 18px;
-      }
-
-      .tagline p {
-        font-size: 12px;
-      }
-
-      .link-button {
-        font-size: 14px;
-        padding: 12px 18px;
-      }
+      .container { padding: 25px 20px; border-radius: 20px; }
+      .logo-section img { width: 90px; }
+      .tagline h2 { font-size: 18px; }
+      .tagline p { font-size: 12px; }
+      .link-button { font-size: 14px; padding: 12px 18px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Decorative Leaves -->
+    <svg class="leaf-decoration leaf-top-left" viewBox="0 0 100 100">
+      <path d="M10,50 Q30,20 50,10 Q70,20 90,50 Q70,80 50,90 Q30,80 10,50" fill="#4a7c59"/>
+    </svg>
+    <svg class="leaf-decoration leaf-top-right" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="50" rx="40" ry="20" fill="#4a7c59" transform="rotate(45 50 50)"/>
+    </svg>
+    <svg class="leaf-decoration leaf-bottom" viewBox="0 0 200 150">
+      <path d="M20,100 Q50,50 100,75 Q150,50 180,100" stroke="#4a7c59" fill="none" stroke-width="3"/>
+      <path d="M40,120 Q80,80 120,100 Q160,80 180,120" stroke="#4a7c59" fill="none" stroke-width="2"/>
+    </svg>
+    <svg class="leaf-decoration leaf-bottom-left" viewBox="0 0 100 100">
+      <path d="M10,50 Q30,20 50,10 Q70,20 90,50 Q70,80 50,90 Q30,80 10,50" fill="#4a7c59"/>
+    </svg>
+    <svg class="leaf-decoration leaf-bottom-right" viewBox="0 0 100 100">
+      <ellipse cx="50" cy="50" rx="40" ry="20" fill="#4a7c59" transform="rotate(-45 50 50)"/>
+    </svg>
+
     <!-- Logo Section -->
     <div class="logo-section">
       <img src="your-logo.png" alt="Eco Sphere Terrariums Logo" />
-      <div class="brand-name">ECO SPHERE</div>
-      <div class="brand-subtitle">TERRARIUMS</div>
-    </div>
-
-    <!-- Tagline -->
-    <div class="tagline">
-      <h2>Naturally Crafted<br>Sustainably Sourced</h2>
-      <p>Make the easy and affordable<br>green choice for your home.</p>
-    </div>
-
-    <!-- Links -->
-    <div class="links">
-      <a href="https://www.tiktok.com/@myecosphere0?_r=1&_t=ZN-91y9buakN0g" class="link-button" target="_blank">TikTok</a>
-      <a href="https://www.instagram.com/my.eco.sphere?igsh=MXExZHA4eTQ5Nnc0NQ==" class="link-button" target="_blank">Instagram</a>
-      <a href="https://www.facebook.com" class="link-button" target="_blank">Facebook</a>
-    </div>
-
-    <!-- Email Icon -->
-    <div class="email-icon">
-      <a href="mailto:my.eco.sphere.0@gmail.com">
-        <svg viewBox="0 0 24 24">
-          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-</body>
-</html>
-
-
-
-
+      <div class="
